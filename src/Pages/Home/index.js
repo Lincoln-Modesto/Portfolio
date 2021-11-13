@@ -3,8 +3,10 @@ import { Title, TitleDark, TitleDescription } from '../../components/Titles'
 import { SectionAbout } from '../../components/About'
 import { Paragraph } from '../../components/Paragraph'
 import { Badge, BadgeTitle } from '../../components/Badge'
-import { Subtitle, SubtitleItalic } from '../../components/Subtitle'
+import { Subtitle, SubtitleItalic, SubtitleItem } from '../../components/Subtitle'
 import { Card } from '../../components/Card'
+import { ItemContact } from '../../components/ItemContact'
+import { Item } from '../../components/Item'
 
 import Toggle from '../../components/Toggle'
 import hero from '../../assets/capa.png'
@@ -12,11 +14,23 @@ import mac from '../../assets/mac.png'
 import iphone from '../../assets/iPhoneX.png'
 import petfood from '../../assets/petfood.png'
 import saoquadrado from '../../assets/saoquadrado.png'
+import js from '../../assets/js.png'
+import ts from '../../assets/ts.png'
+import git from '../../assets/git.png'
+import figma from '../../assets/figma.png'
+import native from '../../assets/native.png'
+import react from '../../assets/react.png'
+import redux from '../../assets/redux.png'
+import styled from '../../assets/styled.png'
+import linkedin from '../../assets/linkedin.png'
+import github from '../../assets/github.png'
 
 import './styles.css'
 import '../../styles/global.css'
 
+
 export function Home() {
+
   return (
     <main>
       <section className="hero">
@@ -85,7 +99,10 @@ export function Home() {
       <section className="container">
         <Title children="Projetos" />
         <div className="projetosContainer">
-          <Card>
+          <Card
+            href="https://github.com/Lincoln-Modesto/Petfood"
+            target="_blank"
+            rel="noreferrer">
             <img src={petfood} alt="petfood" />
             <div className="content">
               <TitleDescription children="PETFOOD" />
@@ -105,13 +122,14 @@ export function Home() {
               </div>
               <Paragraph
                 children="Marketplace de petshops com split de pagamentos do pagar.me, 
-                aplicação funcional, com acesso aos petshops através do mapa, carrinho de compras, 
-                cadastro de cartão e de usuário.
-                "/>
+                aplicação funcional, com acesso aos petshops através do mapa, 
+                carrinho de compras, cadastro de cartão e de usuário."/>
             </div>
           </Card>
 
-          <Card>
+          <Card  href="https://github.com/Lincoln-Modesto/S2-Engenharia"
+            target="_blank"
+            rel="noreferrer">
             <img src={saoquadrado} alt="petfood" />
             <div className="content">
               <TitleDescription children="SÃO QUADRADO ENGENHARIA" />
@@ -142,10 +160,27 @@ export function Home() {
       </section>
 
       <section className="container">
-        <Title children="Principais habilidades"/>
-        
+        <Title children="Principais habilidades" />
+        <div className="container-items">
+          <Item img={js} subtitle="JAVASCRIPT" />
+          <Item img={ts} subtitle="TYPESCRIPT" />
+          <Item img={react} subtitle="REACT JS" />
+          <Item img={native} subtitle="REACT NATIVE" />
+          <Item img={redux} subtitle="REDUX" />
+          <Item img={styled} subtitle="STYLED COMPONENTS" />
+          <Item img={figma} subtitle="FIGMA" />
+          <Item img={git} subtitle="GIT" />
+        </div>
+
+        <div className="container-contact">
+          <ItemContact img={github} subtitle="GITHUB" contact="https://github.com/Lincoln-Modesto" />
+          <ItemContact img={linkedin} subtitle="LINKEDIN" contact="https://www.linkedin.com/in/lincoln-modesto" />
+        </div>
+        <SubtitleItem children="@COPYRIGHT 2021 - LINCOLN MODESTO" />
       </section>
 
     </main>
   )
 }
+
+

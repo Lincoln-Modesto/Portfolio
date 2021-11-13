@@ -9,5 +9,6 @@ export const Paragraph = styled.p`
   line-height: 26px;
   letter-spacing: 0.04em;
   text-align: justify;
-  color: ${theme.dark.subtitleColor}
+  color: ${theme.dark.subtitleColor};
+  text-decoration: none
 `
