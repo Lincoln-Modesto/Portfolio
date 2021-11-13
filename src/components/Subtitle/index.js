@@ -20,3 +20,13 @@ export const SubtitleItalic = styled.h4`
   text-align: left;
   color: ${theme.dark.subtitleColor};
 `
+export const SubtitleItem = styled.h6`
+  font-family: 'Montserrat';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 14px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  color: ${theme.dark.subtitleColor};
+`

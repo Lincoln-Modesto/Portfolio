@@ -10,6 +10,7 @@ export const Badge = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
 `
 export const BadgeTitle = styled.h6`
   font-family: 'Montserrat';
@@ -20,4 +21,5 @@ export const BadgeTitle = styled.h6`
   letter-spacing: 0.12em;
   text-align: center;
   color: #fff;
+  text-decoration: none
 `

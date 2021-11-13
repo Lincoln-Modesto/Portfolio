@@ -1,0 +1,12 @@
+.item{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.item > img{
+  margin-bottom: 1rem;
+}
