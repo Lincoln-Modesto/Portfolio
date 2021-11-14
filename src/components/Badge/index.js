@@ -21,5 +21,4 @@ export const BadgeTitle = styled.h6`
   letter-spacing: 0.12em;
   text-align: center;
   color: #fff;
-  text-decoration: none
 `

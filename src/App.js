@@ -1,10 +1,27 @@
+import { useMemo, useState } from 'react'
+import { ThemeProvider } from 'styled-components'
 
 import { Home } from './Pages/Home'
-import './styles/App.css'
-import './styles/global.css'
+import GlobalStyle from './styles/GlobalStyle'
+import themes from './styles/theme'
 
 export default function App() {
+
+  const [theme, setTheme] = useState('dark')
+
+  const currentTheme = useMemo( () => { 
+    return themes[theme] || themes.light
+  }, [theme])
+
+  function handleToggleTheme(){
+    setTheme( prevState => prevState === 'light' ? 'dark' : 'light')
+  }
+
   return (
-    <Home/>
+    <ThemeProvider theme={currentTheme} >
+       <GlobalStyle/>
+       <Home onToggleTheme={handleToggleTheme}/>
+    </ThemeProvider>
+   
   )
 }
