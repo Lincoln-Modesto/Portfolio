@@ -1,4 +1,4 @@
-.item{
+.itemCard{
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -6,13 +6,14 @@
   align-items: center;
   padding: 3rem;
   cursor: pointer;
-}
-
-.item:active{
   text-decoration: none;
 }
 
-.item > img{
+.itemCard:active{
+  text-decoration: none;
+}
+
+.itemCard > img{
   margin-bottom: 1rem;
 }
 

@@ -1,8 +1,6 @@
 import styled from "styled-components";
-import theme from "../../styles/theme";
 
-export const TitleDark = styled.h3`
-  color: ${theme.dark.darkTitle};
+export const TitleDark = styled.h2`
   font-size: 22px;
   font-style: normal;
   font-weight: 600;
@@ -10,10 +8,10 @@ export const TitleDark = styled.h3`
   letter-spacing: 0em;
   text-align: left;
   margin-right: 1rem;
+  color: ${({theme}) => theme.titleColor}
 `
 
-export const Title = styled.h3`
-  color: ${theme.dark.titleColor};
+export const Title = styled.h2`
   font-size: 22px;
   font-style: normal;
   font-weight: 600;
@@ -21,10 +19,10 @@ export const Title = styled.h3`
   letter-spacing: 0em;
   text-align: left;
   margin-right: 1rem;
+  color: ${({theme}) => theme.titleColor}
 `
 
-export const TitleDescription = styled.h4`
-  color: ${theme.dark.titleColor};
+export const TitleDescription = styled.h2`
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
@@ -32,4 +30,5 @@ export const TitleDescription = styled.h4`
   letter-spacing: 0em;
   text-align: left;
   margin-top: 0.5rem;
+  color: ${({theme}) => theme.titleColor}
 `

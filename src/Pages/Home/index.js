@@ -26,10 +26,22 @@ import linkedin from '../../assets/linkedin.png'
 import github from '../../assets/github.png'
 
 import './styles.css'
-import '../../styles/global.css'
+import '../../styles/GlobalStyle.js'
+import { useEffect, useState } from 'react'
 
+export function Home({onToggleTheme}) {
 
-export function Home() {
+  const [date, setDate] = useState({})
+
+  useEffect(() => {
+    var data = new Date();
+
+    const hora = data.getHours(); 
+    const minutes = data.getMinutes();
+
+    setDate({hora, minutes})
+
+  }, [date])
 
   return (
     <main>
@@ -45,11 +57,11 @@ export function Home() {
       <section className="effects">
         <div className="container-toggle">
           <TitleDark children="Dark Mode" />
-          <Toggle />
+          <Toggle onToggleTheme={onToggleTheme}/>
         </div>
         <div className="container-clock-location">
           <small>Localização:</small>
-          <h4>Estância/SE 09:30 AM</h4>
+          <h4>Estância/SE {date.hora === 0 ? '00' : date.hora}:{date.minutes}</h4>
           <div>
             <div></div>
             <h6>Trabalhando agora</h6>
@@ -57,7 +69,7 @@ export function Home() {
         </div>
       </section>
 
-      <SectionAbout>
+      <SectionAbout className="sectionAbout">
         <Title children="Sobre" />
         <div className="about">
           <div></div>
