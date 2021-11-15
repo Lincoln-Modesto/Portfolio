@@ -36,6 +36,7 @@ export default createGlobalStyle`
   body{
     background-color: ${ props => props.theme.backgroundColor};
     line-height: 1;
+    overflow-x: hidden;
   }
   
   small{

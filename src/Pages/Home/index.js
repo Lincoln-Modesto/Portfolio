@@ -51,7 +51,7 @@ export function Home({ onToggleTheme }) {
   useEffect(() => {
     var data = new Date();
     const hora = data.getHours();
-    const minutes = data.getMinutes();
+    const minutes = String(data.getMinutes()).padStart(2, "0");
 
     setDate({ hora, minutes })
   }, [date])
@@ -59,14 +59,16 @@ export function Home({ onToggleTheme }) {
   return (
     <main>
       <section className="hero">
-        <div>
+        <div className="contentHero">
           <h1>Lincoln Modesto</h1>
           <TitleDescription children="Desenvolvedor Front-end/Mobile" />
           <a href="https://t.me/Lincolnmodesto" target="_blank" rel="noreferrer">
             <ButtonContact type="button" children="ENTRE EM CONTATO" />
           </a>
         </div>
-        <img src={hero} alt="hero" loading="lazy" />
+        <div className="imgHero">
+          <img src={hero} alt="hero" loading="lazy"/>
+        </div>
       </section>
 
       <section className="effects">
@@ -99,7 +101,7 @@ export function Home({ onToggleTheme }) {
         <Title children="UX/UI" />
         <div className="ux-container">
 
-          <div>
+          <div id="mulheresDeObra">
             <img src={mac} alt="pc" loading="lazy" />
             <Badge>
               <BadgeTitle children="FIGMA" />
@@ -108,7 +110,7 @@ export function Home({ onToggleTheme }) {
             <Subtitle children="Protótipo de alta fidelidade web" />
           </div>
 
-          <div>
+          <div id="cleanHome">
             <img src={iphone} alt="pc" loading="lazy" />
             <Badge>
               <BadgeTitle children="FIGMA" />
@@ -119,7 +121,7 @@ export function Home({ onToggleTheme }) {
         </div>
         {visibilityUX === "VER MENOS" &&
           <div className="ux-container">
-            <div>
+            <div id="ecofood">
               <img src={ecofood} alt="pc" loading="lazy" />
               <Badge>
                 <BadgeTitle children="FIGMA" />
@@ -141,7 +143,7 @@ export function Home({ onToggleTheme }) {
             href="https://github.com/Lincoln-Modesto/Petfood"
             target="_blank"
             rel="noreferrer">
-            <img src={petfood} alt="petfood" loading="lazy" />
+            <img src={petfood} alt="petfood" loading="lazy" className="imgCard"/>
             <div className="content">
               <TitleDescription children="PETFOOD" />
               <div className="container-badges">
@@ -160,15 +162,15 @@ export function Home({ onToggleTheme }) {
               </div>
               <Paragraph
                 children="Marketplace de petshops com split de pagamentos do pagar.me, 
-                aplicação funcional, com acesso aos petshops através do mapa, 
-                carrinho de compras, cadastro de cartão e de usuário."/>
+                acesso aos petshops através do mapa, 
+                carrinho de compras, cadastro de cartão de crédito e de usuário."/>
             </div>
           </Card>
 
           <Card href="https://github.com/Lincoln-Modesto/S2-Engenharia"
             target="_blank"
             rel="noreferrer">
-            <img src={saoquadrado} alt="petfood" loading="lazy" />
+            <img src={saoquadrado} alt="petfood" loading="lazy" className="imgCard"/>
             <div className="content">
               <TitleDescription children="SÃO QUADRADO ENGENHARIA" />
               <div className="container-badges">
@@ -197,7 +199,7 @@ export function Home({ onToggleTheme }) {
             <Card href="https://github.com/Lincoln-Modesto/Seecon-Engenharia"
               target="_blank"
               rel="noreferrer">
-              <img src={seecon} alt="seecon" loading="lazy" />
+              <img src={seecon} alt="seecon" loading="lazy" className="imgCard"/>
               <div className="content">
                 <TitleDescription children="SEECON ENGENHARIA" />
                 <div className="container-badges">
@@ -223,7 +225,7 @@ export function Home({ onToggleTheme }) {
             <Card href="https://github.com/Lincoln-Modesto/NLW-Together---gameplay"
               target="_blank"
               rel="noreferrer">
-              <img src={gameplay} alt="gameplay" loading="lazy" />
+              <img src={gameplay} alt="gameplay" loading="lazy" className="imgCard"/>
               <div className="content">
                 <br />
                 <TitleDescription children="GAMEPLAY" />
@@ -250,7 +252,7 @@ export function Home({ onToggleTheme }) {
             <Card href="https://github.com/Lincoln-Modesto/NLW5---PlantManager"
               target="_blank"
               rel="noreferrer">
-              <img src={plant} alt="plant" loading="lazy" />
+              <img src={plant} alt="plant" loading="lazy" className="imgCard"/>
               <div className="content">
                 <br />
                 <TitleDescription children="PLANT MANAGER" />
