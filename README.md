@@ -19,9 +19,8 @@ Abra [http://localhost:3000](http://localhost:3000) para visualizar no seu brows
 ![home](src/assets/asset2.png?raw=true "home")
 ![home](src/assets/asset3.png?raw=true "home")
 
-<div style="display: inline_block"><br>
-
-![home](src/assets/asset4.jpeg?raw=true "home")
-![home](src/assets/asset5.jpeg?raw=true "home")
+<div style="display: flex"><br>
+<img src="src/assets/asset4.jpeg?raw=true" style="height: 30em"/>
+<img src="src/assets/asset5.jpeg?raw=true" style="height: 30em"/>
 
 </div>
