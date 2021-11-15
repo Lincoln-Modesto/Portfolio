@@ -29,6 +29,10 @@ export default createGlobalStyle`
     display: block;
   }
 
+  html{
+    scroll-behavior: smooth;
+  }
+
   body{
     background-color: ${ props => props.theme.backgroundColor};
     line-height: 1;
