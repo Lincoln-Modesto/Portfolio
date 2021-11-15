@@ -155,3 +155,187 @@ background-color: #1DB954;
   display: flex;
   justify-content: center;
 }
+/* X-Small devices (portrait phones, less than 576px)*/
+@media (max-width: 400px){
+
+  #mulheresDeObra > img{
+    zoom: 0.45;
+  }
+}
+
+/* X-Small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px){
+
+  .imgCard{
+    max-width: 360px;
+  }
+
+  .container{
+    margin: 0 0.5rem;
+    padding: 3rem 1.5rem;
+  }
+
+  h1{
+    zoom: 0.7;
+  }
+    
+  .effects{
+    padding: 3rem 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .container-clock-location{
+    display: none;
+  }
+
+  .projetosContainer{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero{
+    flex-direction: column;
+    padding: 0 1.5rem;
+    margin: 3rem 0 0 0;
+    align-items: inherit;
+  }
+
+  .contentHero{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .imgHero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero img{
+    zoom: 0.6;
+  }
+
+  .ux-container{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #cleanHome{
+    margin-top: 3rem;
+  }
+
+  .ux-container > div > img{
+    zoom: 0.55;
+  }
+
+  .container-items{
+    margin: 0;
+    zoom: 0.75;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px)*/
+@media (min-width: 576px) and (max-width: 767.98px){
+
+  .effects{
+    padding: 3rem 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .projetosContainer{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero{
+    margin-top: 3rem;
+    flex-direction: column;
+    padding: 0 1.5rem;
+  }
+
+  .hero img{
+    zoom: 0.8;
+  }
+
+  .ux-container{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #cleanHome{
+    margin-top: 3rem;
+  }
+
+  .ux-container > div > img{
+    zoom: 0.75;
+  }
+
+  .container-items{
+    margin: 0 2rem;
+    zoom: 0.75;
+  }
+
+}
+
+/* Medium devices (tablets, less than 992px)*/
+@media (min-width: 768px) and (max-width: 991.98px){
+
+  .projetosContainer{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero{
+    margin-top: 3rem;
+    flex-direction: column;
+  }
+
+  .hero img{
+    zoom: 0.8;
+  }
+
+  .ux-container{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #cleanHome{
+    margin-top: 3rem;
+  }
+
+  .ux-container > div > img{
+    zoom: 0.75;
+  }
+
+  .container-items{
+    margin: 0 2rem;
+  }
+}
+
+/* Large devices (desktops, less than 1200px)*/
+@media (min-width: 992px) and (max-width: 1199.98px){
+
+  .projetosContainer{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero img{
+    zoom: 0.8;
+  }
+
+  .ux-container > div > img{
+    zoom: 0.75;
+  }
+
+  .container-items{
+    margin: 0 2rem;
+  }
+}
+
+/* X-Large devices (large desktops, less than 1400px)*/
+@media (min-width: 1200px){ 
+ 
+}

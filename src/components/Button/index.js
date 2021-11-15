@@ -18,6 +18,16 @@ export const Button = styled.button`
     :hover{
       opacity: 0.9;
     }
+
+  /* X-Small devices (portrait phones, less than 576px)*/
+  @media (max-width: 575.98px){
+    zoom: 0.7;
+  }
+
+  /* Small devices (landscape phones, less than 768px)*/
+  @media (min-width: 576px) and (max-width: 767.98px){
+    zoom: 0.85;
+  }
 `
 
 export const ButtonContact = styled.button`
@@ -37,4 +47,14 @@ export const ButtonContact = styled.button`
     :hover{
       opacity: 0.9;
     }
+  
+  /* X-Small devices (portrait phones, less than 576px)*/
+  @media (max-width: 575.98px){
+    zoom: 0.7;
+  }
+
+  /* Small devices (landscape phones, less than 768px)*/
+  @media (min-width: 576px) and (max-width: 767.98px){
+    zoom: 0.85;
+  }
 `

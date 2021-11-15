@@ -7,7 +7,12 @@ export const Subtitle = styled.h3`
   line-height: 34px;
   letter-spacing: 0em;
   text-align: left;
-  color: ${({theme}) => theme.subtitleColor}
+  color: ${({theme}) => theme.subtitleColor};
+
+  /* X-Small devices (portrait phones, less than 576px)*/
+  @media (max-width: 575.98px){
+    font-size: 14px;
+  }
 `
 export const SubtitleItalic = styled.h5`
   margin-top: 1rem;
@@ -17,7 +22,12 @@ export const SubtitleItalic = styled.h5`
   line-height: 34px;
   letter-spacing: 0em;
   text-align: left;
-  color: ${({theme}) => theme.subtitleColor}
+  color: ${({theme}) => theme.subtitleColor};
+
+  /* X-Small devices (portrait phones, less than 576px)*/
+  @media (max-width: 575.98px){
+    font-size: 12px;
+  }
 `
 export const SubtitleItem = styled.h5`
   font-family: 'Montserrat';
@@ -27,5 +37,10 @@ export const SubtitleItem = styled.h5`
   line-height: 14px;
   letter-spacing: 0.12em;
   text-align: center;
-  color: ${({theme}) => theme.subtitleColor}
+  color: ${({theme}) => theme.subtitleColor};
+
+  /* X-Small devices (portrait phones, less than 576px)*/
+  @media (max-width: 575.98px){
+    font-size: 12px;
+  }
 `

@@ -11,6 +11,10 @@ export const Badge = styled.div`
   justify-content: center;
   align-items: center;
   
+  /* X-Small devices (portrait phones, less than 576px)*/
+  @media (max-width: 575.98px){
+    zoom: 0.7
+  }
 `
 export const BadgeTitle = styled.h6`
   font-family: 'Montserrat';
