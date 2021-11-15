@@ -15,13 +15,13 @@ E, em seguida o comando:
 A aplicação será executada em modo de desenvolvimento.\
 Abra [http://localhost:3000](http://localhost:3000) para visualizar no seu browser.
 
-![home](src/assets/assets1.png?raw=true "home")
-![home](src/assets/assets2.png?raw=true "home")
-![home](src/assets/assets3.png?raw=true "home")
+![home](src/assets/asset1.png?raw=true "home")
+![home](src/assets/asset2.png?raw=true "home")
+![home](src/assets/asset3.png?raw=true "home")
 
 <div style="display: inline_block"><br>
 
-![home](src/assets/assets4.jpeg?raw=true "home")
-![home](src/assets/assets5.jpeg?raw=true "home")
+![home](src/assets/asset4.jpeg?raw=true "home")
+![home](src/assets/asset5.jpeg?raw=true "home")
 
 </div>
