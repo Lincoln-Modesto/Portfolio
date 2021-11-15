@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 import { Button, ButtonContact } from '../../components/Button'
 import { Title, TitleDark, TitleDescription } from '../../components/Titles'
 import { SectionAbout } from '../../components/About'
@@ -24,23 +26,34 @@ import redux from '../../assets/redux.png'
 import styled from '../../assets/styled.png'
 import linkedin from '../../assets/linkedin.png'
 import github from '../../assets/github.png'
+import seecon from '../../assets/seecon.png'
+import gameplay from '../../assets/gameplay.png'
+import plant from '../../assets/plant.png'
+import ecofood from '../../assets/ecofood.png'
 
 import './styles.css'
 import '../../styles/GlobalStyle.js'
-import { useEffect, useState } from 'react'
 
-export function Home({onToggleTheme}) {
+export function Home({ onToggleTheme }) {
 
   const [date, setDate] = useState({})
+  const [visibilityUX, setVisibilityUX] = useState("VER MAIS")
+  const [visibilityProjects, setVisibilityProjects] = useState("VER MAIS")
+
+  function handleVisibilityUX() {
+    setVisibilityUX(prevState => prevState === "VER MENOS" ? "VER MAIS" : "VER MENOS")
+  }
+
+  function handleVisibilityProjects() {
+    setVisibilityProjects(prevState => prevState === "VER MENOS" ? "VER MAIS" : "VER MENOS")
+  }
 
   useEffect(() => {
     var data = new Date();
-
-    const hora = data.getHours(); 
+    const hora = data.getHours();
     const minutes = data.getMinutes();
 
-    setDate({hora, minutes})
-
+    setDate({ hora, minutes })
   }, [date])
 
   return (
@@ -49,19 +62,21 @@ export function Home({onToggleTheme}) {
         <div>
           <h1>Lincoln Modesto</h1>
           <TitleDescription children="Desenvolvedor Front-end/Mobile" />
-          <ButtonContact type="button" children="ENTRE EM CONTATO" />
+          <a href="https://t.me/Lincolnmodesto" target="_blank" rel="noreferrer">
+            <ButtonContact type="button" children="ENTRE EM CONTATO" />
+          </a>
         </div>
-        <img src={hero} alt="hero" />
+        <img src={hero} alt="hero" loading="lazy" />
       </section>
 
       <section className="effects">
         <div className="container-toggle">
           <TitleDark children="Dark Mode" />
-          <Toggle onToggleTheme={onToggleTheme}/>
+          <Toggle onToggleTheme={onToggleTheme} />
         </div>
         <div className="container-clock-location">
           <small>Localização:</small>
-          <h4>Estância/SE {date.hora === 0 ? '00' : date.hora}:{date.minutes}</h4>
+          <h4>Estância/SE {date?.hora === 0 ? '00' : date?.hora}:{date?.minutes}</h4>
           <div>
             <div></div>
             <h6>Trabalhando agora</h6>
@@ -85,7 +100,7 @@ export function Home({onToggleTheme}) {
         <div className="ux-container">
 
           <div>
-            <img src={mac} alt="pc" />
+            <img src={mac} alt="pc" loading="lazy" />
             <Badge>
               <BadgeTitle children="FIGMA" />
             </Badge>
@@ -94,7 +109,7 @@ export function Home({onToggleTheme}) {
           </div>
 
           <div>
-            <img src={iphone} alt="pc" />
+            <img src={iphone} alt="pc" loading="lazy" />
             <Badge>
               <BadgeTitle children="FIGMA" />
             </Badge>
@@ -102,9 +117,20 @@ export function Home({onToggleTheme}) {
             <Subtitle children="Protótipo de alta fidelidade mobile" />
           </div>
         </div>
+        {visibilityUX === "VER MENOS" &&
+          <div className="ux-container">
+            <div>
+              <img src={ecofood} alt="pc" loading="lazy" />
+              <Badge>
+                <BadgeTitle children="FIGMA" />
+              </Badge>
+              <SubtitleItalic children="User Interface" />
+              <Subtitle children="Protótipo de alta fidelidade mobile" />
+            </div>
+          </div>}
 
         <div className="ux-button">
-          <Button children="VER MAIS" />
+          <Button children={visibilityUX} onClick={handleVisibilityUX} />
         </div>
       </section>
 
@@ -115,7 +141,7 @@ export function Home({onToggleTheme}) {
             href="https://github.com/Lincoln-Modesto/Petfood"
             target="_blank"
             rel="noreferrer">
-            <img src={petfood} alt="petfood" />
+            <img src={petfood} alt="petfood" loading="lazy" />
             <div className="content">
               <TitleDescription children="PETFOOD" />
               <div className="container-badges">
@@ -139,10 +165,10 @@ export function Home({onToggleTheme}) {
             </div>
           </Card>
 
-          <Card  href="https://github.com/Lincoln-Modesto/S2-Engenharia"
+          <Card href="https://github.com/Lincoln-Modesto/S2-Engenharia"
             target="_blank"
             rel="noreferrer">
-            <img src={saoquadrado} alt="petfood" />
+            <img src={saoquadrado} alt="petfood" loading="lazy" />
             <div className="content">
               <TitleDescription children="SÃO QUADRADO ENGENHARIA" />
               <div className="container-badges">
@@ -166,8 +192,88 @@ export function Home({onToggleTheme}) {
           </Card>
         </div>
 
+        {visibilityProjects === "VER MENOS" &&
+          <div className="projetosContainer">
+            <Card href="https://github.com/Lincoln-Modesto/Seecon-Engenharia"
+              target="_blank"
+              rel="noreferrer">
+              <img src={seecon} alt="seecon" loading="lazy" />
+              <div className="content">
+                <TitleDescription children="SEECON ENGENHARIA" />
+                <div className="container-badges">
+                  <Badge>
+                    <BadgeTitle children="HTML 5" />
+                  </Badge>
+                  <Badge>
+                    <BadgeTitle children="CSS 3" />
+                  </Badge>
+                  <Badge>
+                    <BadgeTitle children="JAVASCRIPT" />
+                  </Badge>
+                  <Badge>
+                    <BadgeTitle children="JQUERY" />
+                  </Badge>
+                </div>
+                <Paragraph
+                  children="Site institucional da empresa Seecon Engenharia, desenvolvido utilizando as premissas básicas do desenvolvimento web, sem o uso de frameworks.
+                "/>
+              </div>
+            </Card>
+
+            <Card href="https://github.com/Lincoln-Modesto/NLW-Together---gameplay"
+              target="_blank"
+              rel="noreferrer">
+              <img src={gameplay} alt="gameplay" loading="lazy" />
+              <div className="content">
+                <br />
+                <TitleDescription children="GAMEPLAY" />
+                <div className="container-badges">
+                  <Badge>
+                    <BadgeTitle children="REACT-NATIVE" />
+                  </Badge>
+                  <Badge>
+                    <BadgeTitle children="EXPO" />
+                  </Badge>
+                  <Badge>
+                    <BadgeTitle children="TYPESCRIPT" />
+                  </Badge>
+                </div>
+                <Paragraph
+                  children="Projeto de aplicativo móvel em react-native, feito em expo e utilizando sistema de login do Discord. Aplicação para agendamento de partidas de jogos online
+                "/>
+              </div>
+            </Card>
+          </div>}
+
+        {visibilityProjects === "VER MENOS" &&
+          <div className="projetosContainer">
+            <Card href="https://github.com/Lincoln-Modesto/NLW5---PlantManager"
+              target="_blank"
+              rel="noreferrer">
+              <img src={plant} alt="plant" loading="lazy" />
+              <div className="content">
+                <br />
+                <TitleDescription children="PLANT MANAGER" />
+                <div className="container-badges">
+                  <Badge>
+                    <BadgeTitle children="REACT-NATIVE" />
+                  </Badge>
+                  <Badge>
+                    <BadgeTitle children="EXPO" />
+                  </Badge>
+                  <Badge>
+                    <BadgeTitle children="TYPESCRIPT" />
+                  </Badge>
+                </div>
+                <Paragraph
+                  children="Projeto de aplicativo móvel em react-native, feito em expo. Aplicação para gerenciamento da rega de plantas, utilizando notificações em push.
+                "/>
+              </div>
+            </Card>
+          </div>}
+
         <div className="ux-button">
-          <Button children="VER MAIS" />
+          <Button children={visibilityProjects} onClick={handleVisibilityProjects} />
         </div>
       </section>
 
