@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import { Button, ButtonContact } from '../../components/Button'
 import { Title, TitleDark, TitleDescription } from '../../components/Titles'
@@ -56,6 +58,12 @@ export function Home({ onToggleTheme }) {
     setDate({ hora, minutes })
   }, [date])
 
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
+  AOS.init();
+
   return (
     <main>
       <section className="hero">
@@ -67,7 +75,7 @@ export function Home({ onToggleTheme }) {
           </a>
         </div>
         <div className="imgHero">
-          <img src={hero} alt="hero" loading="lazy"/>
+          <img src={hero} alt="hero" loading="lazy" />
         </div>
       </section>
 
@@ -101,7 +109,11 @@ export function Home({ onToggleTheme }) {
         <Title children="UX/UI" />
         <div className="ux-container">
 
-          <div id="mulheresDeObra">
+          <div id="mulheresDeObra"
+            data-aos="fade-up"
+            data-aos-duration="300"
+            data-aos-once="true"
+          >
             <img src={mac} alt="pc" loading="lazy" />
             <Badge>
               <BadgeTitle children="FIGMA" />
@@ -110,7 +122,11 @@ export function Home({ onToggleTheme }) {
             <Subtitle children="Protótipo de alta fidelidade web" />
           </div>
 
-          <div id="cleanHome">
+          <div id="cleanHome"
+            data-aos="fade-up"
+            data-aos-duration="300"
+            data-aos-once="true"
+          >
             <img src={iphone} alt="pc" loading="lazy" />
             <Badge>
               <BadgeTitle children="FIGMA" />
@@ -142,8 +158,11 @@ export function Home({ onToggleTheme }) {
           <Card
             href="https://github.com/Lincoln-Modesto/Petfood"
             target="_blank"
-            rel="noreferrer">
-            <img src={petfood} alt="petfood" loading="lazy" className="imgCard"/>
+            rel="noreferrer"
+            data-aos="fade-up"
+            data-aos-duration="4000"
+            data-aos-once="true">
+            <img src={petfood} alt="petfood" loading="lazy" className="imgCard" />
             <div className="content">
               <TitleDescription children="PETFOOD" />
               <div className="container-badges">
@@ -169,8 +188,11 @@ export function Home({ onToggleTheme }) {
 
           <Card href="https://github.com/Lincoln-Modesto/S2-Engenharia"
             target="_blank"
-            rel="noreferrer">
-            <img src={saoquadrado} alt="petfood" loading="lazy" className="imgCard"/>
+            rel="noreferrer"
+            data-aos="fade-up"
+            data-aos-duration="4000"
+            data-aos-once="true">
+            <img src={saoquadrado} alt="petfood" loading="lazy" className="imgCard" />
             <div className="content">
               <TitleDescription children="SÃO QUADRADO ENGENHARIA" />
               <div className="container-badges">
@@ -199,7 +221,7 @@ export function Home({ onToggleTheme }) {
             <Card href="https://github.com/Lincoln-Modesto/Seecon-Engenharia"
               target="_blank"
               rel="noreferrer">
-              <img src={seecon} alt="seecon" loading="lazy" className="imgCard"/>
+              <img src={seecon} alt="seecon" loading="lazy" className="imgCard" />
               <div className="content">
                 <TitleDescription children="SEECON ENGENHARIA" />
                 <div className="container-badges">
@@ -225,7 +247,7 @@ export function Home({ onToggleTheme }) {
             <Card href="https://github.com/Lincoln-Modesto/NLW-Together---gameplay"
               target="_blank"
               rel="noreferrer">
-              <img src={gameplay} alt="gameplay" loading="lazy" className="imgCard"/>
+              <img src={gameplay} alt="gameplay" loading="lazy" className="imgCard" />
               <div className="content">
                 <br />
                 <TitleDescription children="GAMEPLAY" />
@@ -252,7 +274,7 @@ export function Home({ onToggleTheme }) {
             <Card href="https://github.com/Lincoln-Modesto/NLW5---PlantManager"
               target="_blank"
               rel="noreferrer">
-              <img src={plant} alt="plant" loading="lazy" className="imgCard"/>
+              <img src={plant} alt="plant" loading="lazy" className="imgCard" />
               <div className="content">
                 <br />
                 <TitleDescription children="PLANT MANAGER" />
@@ -292,7 +314,10 @@ export function Home({ onToggleTheme }) {
           <Item img={git} subtitle="GIT" />
         </div>
 
-        <div className="container-contact">
+        <div className="container-contact"
+          data-aos="fade-up"
+          data-aos-anchor-placement="bottom-bottom"
+          data-aos-once="true">
           <ItemContact img={github} subtitle="GITHUB" contact="https://github.com/Lincoln-Modesto" />
           <ItemContact img={linkedin} subtitle="LINKEDIN" contact="https://www.linkedin.com/in/lincoln-modesto" />
         </div>
@@ -302,5 +327,3 @@ export function Home({ onToggleTheme }) {
     </main>
   )
 }
-
-

@@ -4,7 +4,11 @@ import './styles.css'
 
 export function ItemContact({img, subtitle, contact}){
   return (
-    <a className="itemCard" href={contact} target="_blank" rel="noreferrer">
+    <a 
+    className="itemCard" 
+    href={contact} 
+    target="_blank" 
+    rel="noreferrer">
       <img src={img} alt="skill" loading="lazy"/>
       <SubtitleItem children={subtitle}/>
     </a>
