@@ -7,7 +7,5 @@ export const Paragraph = styled.p`
   font-weight: 300;
   line-height: 26px;
   letter-spacing: 0.04em;
-  text-align: justify;
   color: ${({theme}) => theme.subtitleColor};
-
 `

@@ -54,15 +54,12 @@ export function Home({ onToggleTheme }) {
     var data = new Date();
     const hora = data.getHours();
     const minutes = String(data.getMinutes()).padStart(2, "0");
-
     setDate({ hora, minutes })
   }, [date])
 
-  useEffect(() => {
-    AOS.init();
-  }, [])
-
-  AOS.init();
+  AOS.init({
+    once: false,
+  });
 
   return (
     <main>
@@ -97,11 +94,14 @@ export function Home({ onToggleTheme }) {
       <SectionAbout className="sectionAbout">
         <Title children="Sobre" />
         <div className="about">
-          <div></div>
-          <Paragraph children={`Olá 👋, sou o Lincoln.
-            Sou graduado em Engenharia civil e durante a conclusão do meu curso, desenvolvi o aplicativo móvel (Java e Android nativo) Reescore Lajes registrado junto ao INPI, que é um software voltado a sanar problemas de dimensionamento e projeto das estruturas provisórias de escoramento de lajes maciças e treliçadas.          
+          <div className='divisor'></div>
+          <div className='about-content'>
+            <Paragraph children={`Olá 👋, me chamo Lincoln.`} />
+            <br />
+            <Paragraph children={` Sou graduado em Engenharia civil e durante a conclusão do meu curso, desenvolvi o aplicativo móvel (Java e Android nativo) Reescore Lajes registrado junto ao INPI, que é um software voltado a sanar problemas de dimensionamento e projeto das estruturas provisórias de escoramento de lajes maciças e treliçadas.          
             A partir daí, me apaixonei por tecnologia e programação, e venho estudando e fazendo pequenos projetos desde 2020.
             🚀 Atualmente estou estudando: JavaScript, React JS e React Native, mas também tenho me aventurado em desenvolver aplicações completas, com back-end em Node JS, e banco de dados com MongoDB e Postgres.`} />
+          </div>
         </div>
       </SectionAbout>
 
@@ -321,7 +321,7 @@ export function Home({ onToggleTheme }) {
           <ItemContact img={github} subtitle="GITHUB" contact="https://github.com/Lincoln-Modesto" />
           <ItemContact img={linkedin} subtitle="LINKEDIN" contact="https://www.linkedin.com/in/lincoln-modesto" />
         </div>
-        <SubtitleItem children="@COPYRIGHT 2021 - LINCOLN MODESTO" />
+        <SubtitleItem children="@COPYRIGHT 2022 - LINCOLN MODESTO" />
       </section>
 
     </main>
